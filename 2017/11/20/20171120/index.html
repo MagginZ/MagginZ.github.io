@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>seven - 有趣</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pr,"> 
+    <meta name="author" content="MagginZ"> 
+    <link rel="alternative" href="atom.xml" title="seven" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="/css/diaspora.css">
+
+</head>
+<body class="loading">
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">关于Ionic的一些东西</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+    <div class="section">
+        <div class="article">
+    <div>
+        <h1 class="title">关于Ionic的一些东西</h1>
+        <div class="stuff">
+            <span>十一月 20, 2017</span>
+        </div>
+        <div class="content markdown">
+            <h3 id="啊今天学习了Ionic，想记下来"><a href="#啊今天学习了Ionic，想记下来" class="headerlink" title="啊今天学习了Ionic，想记下来"></a>啊今天学习了Ionic，想记下来</h3><p>手册参考 <a href="https://ionicframework.com/" target="_blank" rel="noopener">Ionic</a></p>
+<h3 id="1-搭建开发环境"><a href="#1-搭建开发环境" class="headerlink" title="1.搭建开发环境"></a>1.搭建开发环境</h3><p>①安装ionic (有可能会用到的cordova)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cordova ionic</span><br></pre></td></tr></table></figure></p>
+<pre><code>②创建一个模板项目
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ionic start myApp tabs/sideMenu/blank</span><br></pre></td></tr></table></figure>
+
+创建一个使用tabs模板/侧边栏菜单模板/空白的模板项目
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ionic start myApp sideMenu</span><br></pre></td></tr></table></figure>
+
+创建一个基于侧边栏菜单的模板项目，项目的名称叫做myApp
+
+③进入到开发模式
+//进入到当前目录下的myApp文件夹
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> myApp</span><br></pre></td></tr></table></figure>
+
+//启动开发服务器
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ionic serve</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="2-Ionic启动开发服务器执行流程"><a href="#2-Ionic启动开发服务器执行流程" class="headerlink" title="2.Ionic启动开发服务器执行流程"></a>2.Ionic启动开发服务器执行流程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ionic serve</span><br></pre></td></tr></table></figure>
+<p>Ionic中 主要是在src的pages目录 通过创建page来构造app</p>
+<p>①Ionic是基于模块的，在app中有main.ts，指定了启动的根模块为AppModule<br>②在AppModule中 ，发现指定的根组件是由ionic-angular所提供的IonicApp<br>③在app.module.ts中<br>IonicModule.forRoot(MyApp)<br>通过IonicApp和myApp就建立起联系了，可以认为IonicApp就是以myApp为根组件<br>④在app.component.ts中 指定了模板内容为<br>app.html<br>在app.html中 将HelloIonicPage设置为当前的root</p>
+<h3 id="3-Ionic中page创建、使用的基本步骤"><a href="#3-Ionic中page创建、使用的基本步骤" class="headerlink" title="3.Ionic中page创建、使用的基本步骤"></a>3.Ionic中page创建、使用的基本步骤</h3><p>①创建一个page<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ionic g page demo01</span><br></pre></td></tr></table></figure></p>
+<p>创建一个叫做demo01的页面类，最终会在src的pages目录中生成一个demo01的文件夹，在该文件夹中有对应的类和模板</p>
+<p>②声明<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import &#123;Demo01Page&#125; from <span class="string">'../pages/demo01/demo01'</span></span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">	delclarations:[Demo01Page],</span><br><span class="line">	entryComponents:[Demo01Page]</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>③调用<br>选择1：可以选择去通过导航 访问（现在还没有学）</p>
+<p>选择2：将Demo01Page ，引入到app.component.ts,设置为rootPage</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="http://link.hhtjim.com/163/425570952.mp3">
+            </audio>
+        </div>
+        
+<div class="comment link" data-id="2017/11/20/20171120/" data-title="关于Ionic的一些东西" data-url="http://yoursite.com/2017/11/20/20171120/" data-shortname="fechin">查看评论</div>
+
+
+    </div>
+</div>
+
+    </div>
+</div>
+</body>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-69833742-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</html>
