@@ -11,7 +11,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Fechin,"> 
-    
+    <meta name="description" content="啊今天学习了Ionic，想记下来手册参考 Ionic
+1.搭建开发环境①安装ionic (有可能会用到的cordova)1npm install -g cordova ionic
+②创建一个模板项目,"> 
     <meta name="author" content="MagginZ"> 
     <link rel="alternative" href="atom.xml" title="seven" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -47,7 +49,31 @@
             <span>十一月 19, 2017</span>
         </div>
         <div class="content markdown">
-            
+            <h3 id="啊今天学习了Ionic，想记下来"><a href="#啊今天学习了Ionic，想记下来" class="headerlink" title="啊今天学习了Ionic，想记下来"></a>啊今天学习了Ionic，想记下来</h3><p>手册参考 <a href="https://ionicframework.com/" target="_blank" rel="noopener">Ionic</a></p>
+<h3 id="1-搭建开发环境"><a href="#1-搭建开发环境" class="headerlink" title="1.搭建开发环境"></a>1.搭建开发环境</h3><p>①安装ionic (有可能会用到的cordova)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cordova ionic</span><br></pre></td></tr></table></figure></p>
+<pre><code>②创建一个模板项目
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ionic start myApp tabs/sideMenu/blank</span><br></pre></td></tr></table></figure>
+
+创建一个使用tabs模板/侧边栏菜单模板/空白的模板项目
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ionic start myApp sideMenu</span><br></pre></td></tr></table></figure>
+
+创建一个基于侧边栏菜单的模板项目，项目的名称叫做myApp
+
+③进入到开发模式
+//进入到当前目录下的myApp文件夹
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> myApp</span><br></pre></td></tr></table></figure>
+
+//启动开发服务器
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ionic serve</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="2-Ionic启动开发服务器执行流程"><a href="#2-Ionic启动开发服务器执行流程" class="headerlink" title="2.Ionic启动开发服务器执行流程"></a>2.Ionic启动开发服务器执行流程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ionic serve</span><br></pre></td></tr></table></figure>
+<p>Ionic中 主要是在src的pages目录 通过创建page来构造app</p>
+<p>①Ionic是基于模块的，在app中有main.ts，指定了启动的根模块为AppModule<br>②在AppModule中 ，发现指定的根组件是由ionic-angular所提供的IonicApp<br>③在app.module.ts中<br>IonicModule.forRoot(MyApp)<br>通过IonicApp和myApp就建立起联系了，可以认为IonicApp就是以myApp为根组件<br>④在app.component.ts中 指定了模板内容为<br>app.html<br>在app.html中 将HelloIonicPage设置为当前的root</p>
+<h3 id="3-Ionic中page创建、使用的基本步骤"><a href="#3-Ionic中page创建、使用的基本步骤" class="headerlink" title="3.Ionic中page创建、使用的基本步骤"></a>3.Ionic中page创建、使用的基本步骤</h3><p>①创建一个page<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ionic g page demo01</span><br></pre></td></tr></table></figure></p>
+<p>创建一个叫做demo01的页面类，最终会在src的pages目录中生成一个demo01的文件夹，在该文件夹中有对应的类和模板</p>
+<p>②声明<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import &#123;Demo01Page&#125; from <span class="string">'../pages/demo01/demo01'</span></span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">	delclarations:[Demo01Page],</span><br><span class="line">	entryComponents:[Demo01Page]</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>③调用<br>选择1：可以选择去通过导航 访问（现在还没有学）</p>
+<p>选择2：将Demo01Page ，引入到app.component.ts,设置为rootPage</p>
+
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
                 <source type="audio/mpeg" src="http://link.hhtjim.com/163/425570952.mp3">
