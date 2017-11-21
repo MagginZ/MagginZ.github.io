@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>seven - 有趣</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="Ionic样式比较多，先来这几个            AlertController                 Button                Card             ,"> 
+    <meta name="author" content="MagginZ"> 
+    <link rel="alternative" href="atom.xml" title="seven" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="/css/diaspora.css">
+
+</head>
+<body class="loading">
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">Ionic 应用样式一</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+    <div class="section">
+        <div class="article">
+    <div>
+        <h1 class="title">Ionic 应用样式一</h1>
+        <div class="stuff">
+            <span>十一月 21, 2017</span>
+        </div>
+        <div class="content markdown">
+            <h3 id="Ionic样式比较多，先来这几个"><a href="#Ionic样式比较多，先来这几个" class="headerlink" title="Ionic样式比较多，先来这几个"></a>Ionic样式比较多，先来这几个</h3><ul><br>    <li><br>        <a id="#alert">AlertController</a><br>    </li><br>    <li><br>         <a id="#button">Button</a><br>    </li><br>    <li><br>        <a id="#card">Card</a><br>     </li><br>     <li><br>        <a id="#FAB">FAB</a><br>     </li><br>    <li><br>        <a id="#Grid">Grid</a><br>     </li><br>    <li><br>        <a id="#list">List</a><br>     </li><br>    <li><br>        <a id="#slides">Slides</a><br>     </li><br>    <li><br>        <a id="#load">loadingController</a><br>     </li><br>    <li><br>        <a id="#modal">ModalController</a><br>     </li><br></ul>
+
+
+<div id="alert"><br><br>### AlertController<br><br>需要三步：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">①引入</span><br><span class="line">import &#123;AlertController&#125; from <span class="string">'ionic-angular'</span></span><br><span class="line"></span><br><span class="line">②实例化</span><br><span class="line">constructor(public myAlertCtrl:AlertController)&#123;&#125;</span><br><span class="line"></span><br><span class="line">③调用</span><br><span class="line"><span class="built_in">let</span> myWIndow = this.myAlertCtrl.create(&#123;</span><br><span class="line">	title:<span class="string">""</span>,</span><br><span class="line">	message:<span class="string">''</span>,</span><br><span class="line">	handler:<span class="function"><span class="title">function</span></span>()&#123;&#125;,</span><br><span class="line">	role:<span class="string">'cancel'</span>//只要取消，就会调用方法</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">myWIndwow.present();</span><br></pre></td></tr></table></figure><br><br></div>
+
+<hr>
+
+<div id="button"><br><br>### Button<br><br><img src="/img/button.png"><br><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button ion-button color=<span class="string">""</span>&gt;&lt;/button&gt;&lt;!--color=<span class="string">"primary/danger/secondart/lingt/dark"</span>--&gt;</span><br></pre></td></tr></table></figure><br><br>1.自定义常用颜色<br><i>src/theme/variables.scss $colors 进行设置</i><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$colors</span>:(</span><br><span class="line">	myPink:pink;</span><br><span class="line">)</span><br></pre></td></tr></table></figure><br><br>2.ion-button其他常用属性<br>    2.1:只显示边框的按钮 /outline<br>    2.2:只显示文本  /clear<br>    2.3:圆角效果  /round<br>    2.4：图标按钮<br><br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;button ion-button color=<span class="string">"light"</span> icon-left&gt;</span><br><span class="line">    &lt;ion-icon name=<span class="string">"home"</span>&gt;&lt;/ion-icon&gt;</span><br><span class="line">&lt;/button&gt;</span><br><span class="line">  </span><br><span class="line">[图标官网]：(http://ionicframework.com/docs/ionicons/index.html)</span><br></pre></td></tr></table></figure><br><br>    <i>图标颜色可使用color属性自定义颜色，也可以设置style:”color:颜色”</i><br><br>    2.5:图标大小<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;button ion-button small&gt;small&lt;/button&gt;</span><br><span class="line">      &lt;button ion-button&gt;默认&lt;/button&gt;</span><br><span class="line">      &lt;button ion-button large &gt;large&lt;/button&gt;</span><br><span class="line">      &lt;button ion-button block&gt;block&lt;/button&gt;</span><br></pre></td></tr></table></figure><br><br>    <img src="/img/btnsize.png"><br></div>
+
+<hr>
+
+<div id="card"><br><br>### Card<br><br>    用法：<br><br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ion-card</span><br><span class="line">    ion-card-header</span><br><span class="line">    ion-card-content</span><br></pre></td></tr></table></figure><br><br>    出现的是卡片的样子，类似于名片？？差不多吧，可以将图片放在header中间，content里面写内容<br>    <img src="/img/card.png"><br><br></div>
+
+<hr>
+
+<div id="FAB"><br><br>### FAB 悬浮式按钮<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;ion-content padding&gt;</span><br><span class="line">&lt;ion-fab side=<span class="string">"right"</span>&gt;</span><br><span class="line">  &lt;button ion-fab icon-noly &gt;</span><br><span class="line">    &lt;ion-icon name=<span class="string">"leaf"</span>&gt;&lt;/ion-icon&gt;</span><br><span class="line">  &lt;/button&gt;</span><br><span class="line">    &lt;ion-fab-list &gt;</span><br><span class="line">      &lt;button ion-fab&gt;&lt;ion-icon name=<span class="string">"logo-facebook"</span>&gt;&lt;/ion-icon&gt;&lt;/button&gt;</span><br><span class="line">      &lt;button ion-fab&gt; &lt;ion-icon name=<span class="string">"logo-twitter"</span>&gt;&lt;/ion-icon&gt;&lt;/button&gt;</span><br><span class="line">      &lt;button ion-fab&gt;&lt;ion-icon name=<span class="string">"logo-vimeo"</span>&gt;&lt;/ion-icon&gt;&lt;/button&gt;</span><br><span class="line">      &lt;button ion-fab&gt;&lt;ion-icon name=<span class="string">"logo-github"</span>&gt;&lt;/ion-icon&gt;&lt;/button&gt;</span><br><span class="line">    &lt;/ion-fab-list&gt;</span><br><span class="line"></span><br><span class="line">&lt;/ion-fab&gt;</span><br><span class="line">&lt;/ion-content&gt;</span><br><span class="line">&lt;!--side属性取值:<span class="string">"left/right/bottom/top/middle"</span>--&gt;</span><br></pre></td></tr></table></figure><br><br>### 注意：side属性设置在最外层ion-fab上，控制整体按钮的方向，side属性设置在ion-fab-list上，控制悬浮按钮的方向<br><br></div>
+
+<hr>
+
+<div id="Grid"><br><br>### Grid<br><br><h3>grid的基本用法：</h3><br>指定一个容器为ion-grid<br>行是通过ion-row去指定<br>列是通过ion-col去指定<br>1.可添加多列，类似bootstrap，多列之间不指定列等分，按照均等分实现排列。指定列的等分使用 col-<em>  或col-</em>-<em>,指定列宽为整体宽度的x/12<br>2.距离左边列的偏移量<br>offset-</em><br>3.纵向对齐方式<br>align-itens-satrt/center/end -一行的所有列<br>align-self-start/center/end  -当前这一列自己<br>4.横向<br>justify-content-start/center/end<br>5.设置距离边界的距离<br>push-<em>   向右移动<br>pull-</em>    向左移动<br><br></div>
+
+<hr>
+
+<div id="list"><br><br>### List<br><br>3种，分别是图标列表，联系人头像列表，缩略图列表<br>高级用法：滑动列表<br><br><h3>基本用法</h3><br><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ion-list </span><br><span class="line">	ion-item  //(ion-item 是支持列表项内部的对齐，可以通过item-start/end进行左右对齐)</span><br></pre></td></tr></table></figure><br><br><img src="/img/list1.png"><br><br><h3>分组列表用法</h3><br><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ion-item-group </span><br><span class="line">	ion-item-divider  //指定分隔符内容</span><br><span class="line">	ion-item //具体的内容</span><br></pre></td></tr></table></figure><br><br><img src="/img/list2.png"><br><br><h3>图标列表</h3><br><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ion-list</span><br><span class="line">	ion-item</span><br><span class="line">		ion-icon</span><br></pre></td></tr></table></figure><br><br><img src="/img/list3.png"><br><br><h3>联系人列表</h3><br><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ion-list</span><br><span class="line">	ion-list</span><br></pre></td></tr></table></figure><br><br>效果如分组列表<br><br><h3><b>常见的列表一  —– avatar list</b></h3><br><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ion-list</span><br><span class="line">	ion-item</span><br><span class="line">		ion-avatar</span><br><span class="line">			&lt;img/&gt;</span><br></pre></td></tr></table></figure><br><br><img src="/img/list4.png"><br><br><h3><b>常见的列表一  —– thumbnail list</b></h3><br><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ion-list</span><br><span class="line">	ion-item</span><br><span class="line">		ion-thumbnailr</span><br><span class="line">			&lt;img/&gt;</span><br></pre></td></tr></table></figure><br><br><img src="/img/list5.png"><br><br><h3><b>高级列表一  —– 侧滑动列表(qq联系人滑动效果)</b></h3><br><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;ion-list&gt;</span><br><span class="line">  &lt;ion-item-sliding&gt;</span><br><span class="line">    &lt;ion-item&gt;</span><br><span class="line">      &lt;ion-icon name=<span class="string">"star"</span>&gt;&lt;/ion-icon&gt;</span><br><span class="line">    &lt;/ion-item&gt;</span><br><span class="line">    &lt;!--side是指选项按钮显示在item的左边或右边--&gt;</span><br><span class="line">    &lt;ion-item-options side=<span class="string">"right"</span>&gt;</span><br><span class="line">      &lt;button ion-button color=<span class="string">"secondary"</span>&gt;关注&lt;/button&gt;</span><br><span class="line">      &lt;button ion-button color=<span class="string">"gander"</span>&gt;删除&lt;/button&gt;</span><br><span class="line">    &lt;/ion-item-options&gt;</span><br><span class="line">  &lt;/ion-item-sliding&gt;</span><br><span class="line">&lt;/ion-list&gt;</span><br><span class="line">```	</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;hr&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;div id=<span class="string">"slides"</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">### Slides 做轮播图效果/可做新手教程 </span></span><br><span class="line"></span><br><span class="line">&lt;h3&gt;语法&lt;/h3&gt;</span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">ion-slides</span><br><span class="line">	ion-slide</span><br><span class="line">	ion-slide</span><br></pre></td></tr></table></figure><br><br>ion-slides所支持属性：<br>effect :  轮播样式<br>    slide (默认),fade,cube,coverflow or flip<br>speed  动画时长<br>autoplay  自动轮播，可指定切换时间<br>direction 纵向/横向轮播 默认horizontal 横向，vertical纵向/ loop 循环<br>pager 小圆点<br>paginationType:<br>    bullets（默认）,fraction （<em>/</em>）,progress（可视化进度条）<br></div>
+
+<div id="load"><br><br>### LoadingController<br><br><h3>实现步骤</h3><br><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1、引入</span><br><span class="line">	import &#123;LoadingController&#125; from <span class="string">'ionic-angular'</span></span><br><span class="line">2、实例化</span><br><span class="line">	constructor(public myLoadCtrl:LoadingController)&#123;&#125;</span><br><span class="line">3、调用</span><br><span class="line">	<span class="built_in">let</span> myLoading = this.myLoadCtrl.create(&#123;</span><br><span class="line">		content:<span class="string">''</span>,</span><br><span class="line">		duration:<span class="string">''</span></span><br><span class="line">	&#125;)</span><br><span class="line">	myLoading.present();</span><br><span class="line">	myLoading.dismiss();</span><br></pre></td></tr></table></figure><br><br></div>
+
+<hr>
+
+<div id="modal"><br><br>### ModalController 自定义模态窗<br><br><h3>实现步骤</h3><br><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">1.引入</span><br><span class="line">import&#123;ModalController&#125; from <span class="string">'ionic-angular'</span></span><br><span class="line">2.实例化</span><br><span class="line">constructor(public myModalCtrl:ModalController)&#123;</span><br><span class="line">&#125;</span><br><span class="line">3.创建</span><br><span class="line">3.1:创建一个组件</span><br><span class="line">	在组件中可以关闭一个模态窗呢？</span><br><span class="line">	import &#123;ViewController&#125; from <span class="string">'ionic-angular'</span></span><br><span class="line"></span><br><span class="line">	constructor(public myViewCtrl:ViewController)&#123;&#125;</span><br><span class="line">	//myViewCtrl指的就是模态窗</span><br><span class="line">		this.myViewCtrl.dismiss()</span><br><span class="line"></span><br><span class="line">3.2：声明组件  分别在declarations和entryComponents进行声明</span><br><span class="line">3.3：引入对应的组件类，比如LoginComponent</span><br><span class="line">3.4:创建模态窗</span><br><span class="line"><span class="built_in">let</span> modal=this.myModal.create(LoginComponent);</span><br><span class="line">	   3.5:显示模态窗</span><br><span class="line">  			modal.present();</span><br></pre></td></tr></table></figure><br><br></div>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="http://link.hhtjim.com/163/425570952.mp3">
+            </audio>
+        </div>
+        
+<div class="comment link" data-id="2017/11/21/20171121/" data-title="Ionic 应用样式一" data-url="http://yoursite.com/2017/11/21/20171121/" data-shortname="fechin">查看评论</div>
+
+
+    </div>
+</div>
+
+    </div>
+</div>
+</body>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-69833742-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</html>
