@@ -11,7 +11,15 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Fechin,"> 
-    <meta name="description" content="Ionic样式比较多，先来这几个     AlertController     Butto     Card     FAB     Grid    List     Slides    load,"> 
+    <meta name="description" content="
+
+今天有以下内容
+1. ion-refresher
+2. ion-infintie-scroll
+3. ion-tabs
+4. navigation (跳转、传参)
+5. form 
+    * ,"> 
     <meta name="author" content="MagginZ"> 
     <link rel="alternative" href="atom.xml" title="seven" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -136,7 +144,7 @@
 </ul>
 </li>
 <li><p>直接通过属性绑定，将myDestionation绑定给navPush</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">	[navPush]=<span class="string">"myDestination"</span></span><br><span class="line"></span><br><span class="line">```	</span><br><span class="line"><span class="comment">### 参数传递</span></span><br><span class="line">1. 明确发送、接收方</span><br><span class="line">2. 配置接收方的路由地址(可以选)</span><br><span class="line">3. 接收参数</span><br><span class="line">4. 发送参数</span><br><span class="line">**实现方式：**</span><br><span class="line"></span><br><span class="line">1. 跳转的同时，发送参数</span><br><span class="line"> * js传参方式：</span><br><span class="line"> ``` bash</span><br><span class="line">this.navCtrl.push(</span><br><span class="line">	DestinationPage,&#123;</span><br><span class="line">		key:value</span><br><span class="line">&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">	[navPush]=<span class="string">"myDestination"</span></span><br><span class="line"></span><br><span class="line">```	</span><br><span class="line"><span class="comment">### 参数传递</span></span><br><span class="line"></span><br><span class="line">1. 明确发送、接收方</span><br><span class="line">2. 配置接收方的路由地址(可以选)</span><br><span class="line">3. 接收参数</span><br><span class="line">4. 发送参数</span><br><span class="line"></span><br><span class="line">**实现方式：**</span><br><span class="line"></span><br><span class="line">1. 跳转的同时，发送参数</span><br><span class="line"></span><br><span class="line"> * js传参方式：</span><br><span class="line"> </span><br><span class="line"> ``` bash</span><br><span class="line">this.navCtrl.push(</span><br><span class="line">	DestinationPage,&#123;</span><br><span class="line">		key:value</span><br><span class="line">&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <ul>
 <li>通过属性方式：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button [navPush]=<span class="string">"myDestination"</span>] [navParams]=<span class="string">"&#123;key:value&#125;"</span> &lt;/button&gt;</span><br></pre></td></tr></table></figure>
 </li>
