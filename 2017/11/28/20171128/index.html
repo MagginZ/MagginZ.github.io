@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>seven - 有趣</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="
+
+今天有以下内容
+1. ion-refresher
+2. ion-infintie-scroll
+3. ion-tabs
+4. navigation (跳转、传参)
+5. form 
+    * ,"> 
+    <meta name="author" content="MagginZ"> 
+    <link rel="alternative" href="atom.xml" title="seven" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="/css/diaspora.css">
+
+</head>
+<body class="loading">
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">20171128</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+    <div class="section">
+        <div class="article">
+    <div>
+        <h1 class="title">20171128</h1>
+        <div class="stuff">
+            <span>十一月 28, 2017</span>
+        </div>
+        <div class="content markdown">
+            <blockquote>
+<p>主要内容</p>
+<ol>
+<li>概述</li>
+<li>搭建开发环境</li>
+<li>React的核心思想和核心概念</li>
+<li>React的组件的基础知识<br><a href="https://doc.react-china.org/docs/thinking-in-react.html" target="_blank" rel="noopener">react中文文档</a><br><a href="https://reactjs.org/" target="_blank" rel="noopener">react官网</a></li>
+</ol>
+</blockquote>
+<hr>
+<blockquote>
+<p>一、概述<br>React是是由facebook推出的,一个是通过组件化，用来实现ui层的开源的js库</p>
+</blockquote>
+<p><strong>Why？</strong></p>
+<ul>
+<li>大量的数据操作，带来了大量的DOM操作,浏览器遇到了性能瓶颈问题-&gt;虚拟DOM(VDOM)</li>
+<li>大量的数据操作背后，复杂的业务逻辑，代码的维护和开发成本提高<br>-&gt;state和组件化</li>
+</ul>
+<p><strong>React特点</strong></p>
+<ul>
+<li>组件化</li>
+<li>高效（通过虚拟DOM，最大限度的减少真实DOM的操作）</li>
+<li>JSX：不是一种新的语言，是对于js的扩展，允许在js中编写html</li>
+<li>灵活 可以非常方便的<br>搭配其他库来使用</li>
+</ul>
+<hr>
+<blockquote>
+<p>二、React开发环境的搭建方式<br><em>方式一</em><br>引入相应的js文件<br><strong>方式二:通过命令行</strong></p>
+<ol>
+<li>安装create-react-app<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g create-react-app</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<ol>
+<li><p>创建一个my-app的项目</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create-react-app my-app</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>切换到对应的目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> my-app/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动开发服务器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm start</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><em>使用React时的问题</em></p>
+<ol>
+<li>React是一个相对年轻的框架，配套使用的库<br>并不是特别多</li>
+<li>并不是所有的项目 都适合React来实现<br>（数据操作非常频繁，页面更新非常多）</li>
+<li>React不支持ie8以下的任何浏览器（官方以后<br>也不支持）</li>
+</ol>
+<p><strong>核心思想：组件(是一个可被反复使用的带有特定功能的视图 Everything is Component)</strong></p>
+<hr>
+<blockquote>
+<p>三、React开发</p>
+<h3 id="第一个例子"><a href="#第一个例子" class="headerlink" title="第一个例子"></a>第一个例子</h3><ul>
+<li>引入3个js的文件<br>react.js 核心文件<br>react-dom.js 和DOm相关的文件<br>browser.min.js 浏览器</li>
+<li>指定了一个容器，用来渲染元素（容器是用来盛放根组件的）</li>
+<li>ReactDOM.render(要渲染的元素，准备渲染的容器);<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.render(</span><br><span class="line">	&lt;h1&gt;Hello ReactJS&lt;/h1&gt;,</span><br><span class="line">	document.getElementById(<span class="string">'example'</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<p><em>在js中编写html标签，将这种语法称之为JSX.</em><br><strong>需要在type中指定babel</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">babel</span><br><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/babel"</span>&gt;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p><em>babel是一个js的编译器，能够将es6的语法、或者jsx的语法转换为浏览器能够识别的js语法，从而来实现页面的展示</em></p>
+<h3 id="JSX-（java-script-xml）"><a href="#JSX-（java-script-xml）" class="headerlink" title="JSX （java script xml）"></a>JSX （java script xml）</h3><p>注意：JSX不是一种新的语言，只不过是允许在js中编写html</p>
+<p>React是可以完全不使用JSX的，但是用JSX可以更简单的开发，所以还是提倡使用JSX</p>
+<p>JSX语法 借鉴了XML标签打开与关闭的优点，提高了组件的可读性；JSX中可以直接使用HTML标签，赋予React强大的表现能力，方便进行代码的开发，最早是受php中一个插件库的影响。</p>
+<h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><p>遇到HTML标签(&lt;),就会使用HTML来解析<br>遇到了代码块({),就是使用js来解析<br><em>注意事项</em><br>如果我们要渲染多个元素，要将返回的多个元素放到一个顶层标签中</p>
+<hr>
+<blockquote>
+<p>四、组件</p>
+<ol>
+<li>在React中 创建组件<h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//组件类的名称 必须是全驼峰（即使是第一个单词，首字母也要大写）</span><br><span class="line">var ComponentName = 	React.createClass(&#123;</span><br><span class="line">		render:<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">			<span class="built_in">return</span> ‘要渲染的元素’</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<ol>
+<li>在react中，使用组件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//是按照html标签的方式 来调用组件</span><br><span class="line">&lt;ComponentName&gt;&lt;/ComponentName&gt;</span><br><span class="line"></span><br><span class="line">&lt;ComponentName/&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><em>React有一个特点，根据标签的首字母大小写，来决定是按照组件、html标签的方式 来解析内容</em></p>
+<p><strong>注意事项</strong></p>
+<ul>
+<li>首字母必须大写</li>
+<li>不允许在render方法返回时，顶层标签或者第一个元素，不允许直接换行</li>
+<li>不允许直接返回多个元素，要放在一个顶层标签中<h4 id="组件的工作原理"><a href="#组件的工作原理" class="headerlink" title="组件的工作原理"></a>组件的工作原理</h4>React允许将需要反复使用的视图通过代码块的方式 封装在一个组件中，然后像插入html标签一样，在网页中插入这个组件，将组件类进行实例化，将render方法的返回元素 渲染在指定的容器中</li>
+</ul>
+<hr>
+<blockquote>
+<p>五、React中，是以组件为基本单位<br><em>复合组件：</em> 并不是一个新的概念，只不过是由其他的组件构成的，本质依然是一个组件</p>
+</blockquote>
+<p><em>组件树：</em> 在实现一个页面的时候，可以将页面中有共性的部分，封装成组件，把这些组件放在一起，构造成一个最终渲染的根组件，那么这个时候，就有一颗组件树。<br>树的根就是最终渲染的复合组件，树的树叶、树枝就是创建的其它的组件</p>
+<hr>
+<blockquote>
+<p>5.1、props</p>
+<h3 id="react-父组件与子组件通信的方式"><a href="#react-父组件与子组件通信的方式" class="headerlink" title="react 父组件与子组件通信的方式"></a>react 父组件与子组件通信的方式</h3><ol>
+<li>在调用子组件时候，通过属性传值<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;son tips=<span class="string">"something"</span>/&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<ol>
+<li>在子组件内部，通过props属性接收值<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.props.tips</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="子组件想与父组件通信的方式-props。"><a href="#子组件想与父组件通信的方式-props。" class="headerlink" title="子组件想与父组件通信的方式 props。"></a>子组件想与父组件通信的方式 props。</h3><p><strong>父组件</strong></p>
+<p>子组件<br> 有数据要传递给父组件</p>
+<ol>
+<li><p>在父组件中 定义一个用来 接收数据的方法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rcvMsg:<span class="keyword">function</span>(data)&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在父组件中调用子组件时，可以将父组件中的方法传递给子组件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;son callback=&#123;this.rcvMsg&#125;&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>子组件在需要给父组件传值时，调用该方法this.props.callback(this.uname)</p>
+</li>
+</ol>
+<blockquote>
+<p>5.2、children属性<br>this.props.children得到在调用组件时，标签内部 所写的元素，比如:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;MyList&gt;</span><br><span class="line"> &lt;li&gt;test01&lt;/li&gt;</span><br><span class="line">&lt;/MyList&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>this.props.children 是null 是对象 是数组<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">React.Children.map(</span><br><span class="line">	this.props.children,</span><br><span class="line">	<span class="keyword">function</span>(child)&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<hr>
+<blockquote>
+<p>六、refs<br>reference 引用/参考的意思</p>
+</blockquote>
+<ol>
+<li><p>直接ref</p>
+<input type="text" ref="myInput">
+</li>
+<li><p>通过ref去找到元素<br>this.refs.myInput</p>
+</li>
+</ol>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="http://link.hhtjim.com/163/425570952.mp3">
+            </audio>
+        </div>
+        
+<div class="comment link" data-id="2017/11/28/20171128/" data-title="20171128" data-url="http://yoursite.com/2017/11/28/20171128/" data-shortname="fechin">查看评论</div>
+
+
+    </div>
+</div>
+
+    </div>
+</div>
+</body>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-69833742-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</html>
