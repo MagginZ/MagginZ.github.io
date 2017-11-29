@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>seven - 有趣</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="
+主要内容
+
+
+概述
+搭建开发环境
+React的核心思想和核心概念
+React的组件的基础知识react中文文档react官网
+
+
+一、概述
+
+React是是由facebook推出的,一个是通过组件,"> 
+    <meta name="author" content="MagginZ"> 
+    <link rel="alternative" href="atom.xml" title="seven" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="/css/diaspora.css">
+
+</head>
+<body class="loading">
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">React的基础知识二</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+    <div class="section">
+        <div class="article">
+    <div>
+        <h1 class="title">React的基础知识二</h1>
+        <div class="stuff">
+            <span>十一月 29, 2017</span>
+        </div>
+        <div class="content markdown">
+            <blockquote>
+<p>一、State状态</p>
+</blockquote>
+<p>在React中，任何会变化的数据，都要保存在状态中</p>
+<h3 id="状态的三个基本操作"><a href="#状态的三个基本操作" class="headerlink" title="状态的三个基本操作"></a>状态的三个基本操作</h3><ol>
+<li>初始化<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">getInitialState:<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	   retrun &#123;</span><br><span class="line">		count:0,</span><br><span class="line">		age:10,</span><br><span class="line">		sex:1</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>写状态<h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h4></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">this.setState(&#123;count:1&#125;,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">		//判断状态是否被成功修改</span><br><span class="line">&#125;)  //需要修改几个就写几个</span><br></pre></td></tr></table></figure>
+<ol>
+<li>读状态<h4 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h4></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.state.count;  //读取对象中的数据</span><br></pre></td></tr></table></figure>
+<p><em>重点：React是可以将状态中的值，绑定到视图，当状态中的值发生变化的时候，React框架会检测到这个变化，然后在适合的时间，经过DOM diff算法，采用最优的效率来更新真实的DOM(React支持将状态中的值，动态绑定到视图)</em></p>
+<blockquote>
+<p>二、lifecycle生命周期</p>
+</blockquote>
+<h3 id="在React中，组件的生命周期分为3个阶段-mount-update-unmounts"><a href="#在React中，组件的生命周期分为3个阶段-mount-update-unmounts" class="headerlink" title="在React中，组件的生命周期分为3个阶段-mount/update/unmounts"></a>在React中，组件的生命周期分为3个阶段-mount/update/unmounts</h3><p>componentWillMount<br>componentDidMount</p>
+<p>componentWillUpdate<br>componentDidUpdate</p>
+<p>componentWillUnmount</p>
+<p><strong>注意事项</strong></p>
+<ol>
+<li>生命周期的处理函数的名称不能写错，这是由React框架本身提供的方法，会被自动的执行</li>
+<li>refs 想要通过refs操作真实的DOM，必须等到componentDidMount之后</li>
+<li>setState方法是一个异步操作</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">this.setState(&#123;count:1&#125;,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">		//当状态设置成功之后的处理函数</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>updata相关的处理函数有参数的</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> componentWillUpdate:</span><br><span class="line">        <span class="keyword">function</span> (nextProps,nextState) &#123;</span><br><span class="line">          console.log(<span class="string">'nextState'</span>,nextState);</span><br><span class="line">    &#125;,</span><br><span class="line">    componentDidUpdate:</span><br><span class="line">        <span class="keyword">function</span> (prevProps,prevState) &#123;</span><br><span class="line">          console.log(<span class="string">'prevState'</span>,prevState);</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>三、方法</p>
+</blockquote>
+<h3 id="React组件的方法主要分为两大类"><a href="#React组件的方法主要分为两大类" class="headerlink" title="React组件的方法主要分为两大类"></a>React组件的方法主要分为两大类</h3><ol>
+<li>React自有的方法<br>render/生命周期/getInitialState</li>
+<li>自定义的方法<br>handle+event<br>handleClick/handleChange<br>React所建议的编程规范，建议事件的处理函数通过handle+eventName<br>React建议将React自带的方法放在组件的前边，render例外，放在最后。中间才是自定义的方法</li>
+</ol>
+<blockquote>
+<p>四、表单</p>
+</blockquote>
+<ul>
+<li><p>受控表单元素<br>当表单元素给input/textarea指定了value属性；给checkbox/radio指定了checked属性；给select中的option属性指定了selected属性。该表单元素的状态都会由React来控制</p>
+</li>
+<li><p>非受控表单元素<br>defaultValue/..</p>
+<h4 id="受控表单元素的解决方案："><a href="#受控表单元素的解决方案：" class="headerlink" title="受控表单元素的解决方案："></a>受控表单元素的解决方案：</h4></li>
+</ul>
+<ol>
+<li>初始化一个状态<h4 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h4></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">getInitialState:<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	<span class="built_in">return</span> &#123;myValue:<span class="string">'hello'</span>&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>将状态的值绑定给表单元素的属性<h4 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h4></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">value/checked/..</span><br><span class="line">	&lt;input tvalue=&#123;this.state.myValue&#125;/&gt;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>通过onChange事件，修改状态<h4 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h4></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;input value=&#123;this.state.myValue&#125; onChange=&#123;this.handleChange&#125;/&gt;</span><br><span class="line">handleChange:<span class="keyword">function</span>(event)&#123;</span><br><span class="line">		this.setState(&#123;myValue:event.target.value&#125;)</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p><em>表单受控元素并不是 强制要求的，它的好处是方便我们统一进行数据的管理，比如做一些验证。</em></p>
+<p><strong>React中的核心概念</strong></p>
+<ul>
+<li>jsx</li>
+<li>component</li>
+<li>props</li>
+<li>refs</li>
+<li>state</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="http://link.hhtjim.com/163/425570952.mp3">
+            </audio>
+        </div>
+        
+<div class="comment link" data-id="2017/11/29/20171129/" data-title="React的基础知识二" data-url="http://yoursite.com/2017/11/29/20171129/" data-shortname="fechin">查看评论</div>
+
+
+    </div>
+</div>
+
+    </div>
+</div>
+</body>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-69833742-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</html>
