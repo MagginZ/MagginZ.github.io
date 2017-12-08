@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>seven - 有趣</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="
+一、State状态
+
+在React中，任何会变化的数据，都要保存在状态中
+状态的三个基本操作
+初始化代码
+
+1234567getInitialState:function()&amp;#123;	   r,"> 
+    <meta name="author" content="MagginZ"> 
+    <link rel="alternative" href="atom.xml" title="seven" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="/css/diaspora.css">
+
+</head>
+<body class="loading">
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">github上传时候的小问题</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+    <div class="section">
+        <div class="article">
+    <div>
+        <h1 class="title">github上传时候的小问题</h1>
+        <div class="stuff">
+            <span>十二月 08, 2017</span>
+        </div>
+        <div class="content markdown">
+            <h3 id="恩今天上传了一些东西，没有第一次那么容易啊-手动大哭。"><a href="#恩今天上传了一些东西，没有第一次那么容易啊-手动大哭。" class="headerlink" title="恩今天上传了一些东西，没有第一次那么容易啊~手动大哭。"></a>恩今天上传了一些东西，没有第一次那么容易啊~手动大哭。</h3><h1 id="最终删删改改上传成功！不容易。"><a href="#最终删删改改上传成功！不容易。" class="headerlink" title="最终删删改改上传成功！不容易。"></a>最终删删改改上传成功！不容易。</h1><p> <strong>首先分享一个教程，正常情况下按步骤是不会出问题的~ </strong><br> <a href="http://lazynight.me/2898.html" target="_blank" rel="noopener">点这里</a></p>
+<p>这里要注意一点，克隆之后应该在克隆的文件夹里面 get bash here</p>
+<h3 id="好了，现在要说非正常情况下了"><a href="#好了，现在要说非正常情况下了" class="headerlink" title="好了，现在要说非正常情况下了"></a>好了，现在要说非正常情况下了</h3><ol>
+<li>failed to push some refs to git…<br>遇到这个错误一般是在push之后，会出现如下情况：<br><img src="/img/e1.jpg"><br>出现错误的主要原因是github中的README.md文件不在本地代码目录中<br><em>解决方法：将代码合并</em></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase origin master</span><br></pre></td></tr></table></figure>
+<p>避免此错误也可在创建仓库时候勾选 readme.md</p>
+<p>此时在执行push就没问题了</p>
+<ol>
+<li>github 用git bash上传项目　最后提示　Everything<br>up-to-date　但没传上去<br>这个问题我今天一直都在遇到，说是分支的问题，百度到有一个解决方案是这样的</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ git remote -v</span><br><span class="line">origin  https://code.google.com/p/micolog2 (fetch)</span><br><span class="line">origin  https://code.google.com/p/micolog2 (push)</span><br><span class="line"></span><br><span class="line">执行git branch后看到自己当下用的分支是master:</span><br><span class="line"></span><br><span class="line">$ git branch</span><br><span class="line"></span><br><span class="line">master</span><br><span class="line">因此在本地commit后，再执行</span><br><span class="line"></span><br><span class="line">git push origin master</span><br><span class="line"></span><br><span class="line">即可。</span><br></pre></td></tr></table></figure>
+<p>然后再回到自己的项目文件，get bash here<br>按照文档的步骤，在初始化之后,也就是 git init 之后，加上 git add，然后依次按照步骤走，最后就上传成功啦！</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="http://link.hhtjim.com/163/425570952.mp3">
+            </audio>
+        </div>
+        
+<div class="comment link" data-id="2017/12/08/20171208/" data-title="github上传时候的小问题" data-url="http://yoursite.com/2017/12/08/20171208/" data-shortname="fechin">查看评论</div>
+
+
+    </div>
+</div>
+
+    </div>
+</div>
+</body>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-69833742-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</html>
